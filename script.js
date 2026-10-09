@@ -15,5 +15,5 @@ const result1 = products.filter(isInStock).filter(isInStock).map(getName);
 // Task 2 : Total value of tech products in stock
 const getTechProducts = p => p.category === "tech";
 const calcTotalTechProducts = (total, current) => total + current.price * current.qty;
-const result2 = products.filter(getTechProducts).reduce(calcTotalTechProducts, 0);
+const result2 = products.filter(getTechProducts).filter(isInStock).reduce(calcTotalTechProducts, 0);
 console.log(result2);
