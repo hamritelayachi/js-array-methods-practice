@@ -16,4 +16,9 @@ const result1 = products.filter(isInStock).filter(isInStock).map(getName);
 const getTechProducts = p => p.category === "tech";
 const calcTotalTechProducts = (total, current) => total + current.price * current.qty;
 const result2 = products.filter(getTechProducts).filter(isInStock).reduce(calcTotalTechProducts, 0);
-console.log(result2);
+
+// Task: Validate the store
+const hasPositivePrice = p => p.price > 0;
+const isOutOfStock = p => p.inStock === false;
+const result3 = products.every(hasPositivePrice) ? products.filter(isOutOfStock).map(getName) : [];
+
