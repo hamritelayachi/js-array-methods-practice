@@ -1,4 +1,3 @@
-// Task: Get the names of products that are in stock and cost less than 500.
 const products = [
   { id: 1, name: "Laptop", price: 1200, qty: 2, inStock: true,  category: "tech" },
   { id: 2, name: "Phone",  price: 800,  qty: 0, inStock: false, category: "tech" },
@@ -7,10 +6,14 @@ const products = [
   { id: 5, name: "Mouse",  price: 25,   qty: 20, inStock: true, category: "tech" },
 ];
 
+// Task 1 : Get the names of products that are in stock and cost less than 500.
 const isInStock = p => p.inStock === true;
 const isLowCost = p => p.price < 500;
 const getName = p => p.name;
+const result1 = products.filter(isInStock).filter(isInStock).map(getName);
 
-const result = products.filter(isInStock).filter(isInStock).map(getName);
-
-console.log(result);
+// Task 2 : Total value of tech products in stock
+const getTechProducts = p => p.category === "tech";
+const calcTotalTechProducts = (total, current) => total + current.price * current.qty;
+const result2 = products.filter(getTechProducts).reduce(calcTotalTechProducts, 0);
+console.log(result2);
