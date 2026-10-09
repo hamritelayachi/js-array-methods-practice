@@ -30,3 +30,16 @@ const tripleEvenNumber = n => n * 3;
 const calcTotal = (total, current) => total + current;
 const result4 = nums.filter(isEven).map(tripleEvenNumber).reduce(calcTotal);
 
+// Task 5 : changes dash-separated words like “my-short-string” into camel-cased “myShortString”.
+const str = 'my-short-string';
+
+function camelize(string) {
+  const strSplited = str.split('-'); // ['my', 'short', 'string']
+  const firstLetterUppercased = strSplited.map( 
+  (arrElem, index) => index == 0 ? arrElem : `${arrElem[0].toUpperCase()}${arrElem.slice(1)}` );
+  return firstLetterUppercased.join(''); 
+}
+
+const result5 = camelize(str);
+console.log(result5);
+
