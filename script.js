@@ -17,8 +17,16 @@ const getTechProducts = p => p.category === "tech";
 const calcTotalTechProducts = (total, current) => total + current.price * current.qty;
 const result2 = products.filter(getTechProducts).filter(isInStock).reduce(calcTotalTechProducts, 0);
 
-// Task: Validate the store
+// Task 3 : Validate the store
 const hasPositivePrice = p => p.price > 0;
 const isOutOfStock = p => p.inStock === false;
 const result3 = products.every(hasPositivePrice) ? products.filter(isOutOfStock).map(getName) : [];
+
+
+// Task 4 : Sum of tripled even numbers
+const nums = [1, 2, 3, 4, 5, 6, 7];
+const isEven = n => n % 2 === 0;
+const tripleEvenNumber = n => n * 3;
+const calcTotal = (total, current) => total + current;
+const result4 = nums.filter(isEven).map(tripleEvenNumber).reduce(calcTotal);
 
