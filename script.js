@@ -41,5 +41,13 @@ function camelize(string) {
 }
 
 const result5 = camelize(str);
-console.log(result5);
+
+// Task 6 : Function that gets an array arr, looks for elements with values higher or equal to a and lower or equal to b and return a result as an array.
+
+function filterRange(arr, a, b) {
+  return arr.filter( n => (a <= n && n <= b));
+}
+const array = [5, 3, 8, 1];
+
+const result5 = filterRange(array, 1, 4);
 
