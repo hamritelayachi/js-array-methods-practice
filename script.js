@@ -49,5 +49,19 @@ function filterRange(arr, a, b) {
 }
 const array = [5, 3, 8, 1];
 
-const result5 = filterRange(array, 1, 4);
+const result6 = filterRange(array, 1, 4);
 
+// Task 7 : function filterRangeInPlace(arr, a, b) that gets an array arr and removes from it all values except those that are between a and b. The test is: a ≤ arr[i] ≤ b.
+const test_arr = [5, 3, 8, 1];
+
+filterRangeInPlace(test_arr, 1, 4);
+
+console.log(test_arr);
+
+function filterRangeInPlace(arr, a, b) {
+  for(let i = 0; i < arr.length; i++) {
+    if (a <= arr[i] <= b) {
+      arr.splice(i, 1);
+    }
+  }
+}
